@@ -27,6 +27,9 @@ describe('Push element to stack', () => {
     expect(tempTracker.getMin()).toBe(5);
     tempTracker.pop();
     expect(tempTracker.getMin()).toBe(10);
+    expect(
+      tempTracker.minMaxAvgStack[tempTracker.minMaxAvgStack.length - 1].min
+    ).toBe(10);
   });
 
   test('it gets max temperature from stack', () => {
@@ -35,8 +38,14 @@ describe('Push element to stack', () => {
     tempTracker.push(20);
     tempTracker.push(30);
     expect(tempTracker.getMax()).toBe(30);
+    expect(
+      tempTracker.minMaxAvgStack[tempTracker.minMaxAvgStack.length - 1].max
+    ).toBe(30);
     tempTracker.pop();
     expect(tempTracker.getMax()).toBe(20);
+    expect(
+      tempTracker.minMaxAvgStack[tempTracker.minMaxAvgStack.length - 1].max
+    ).toBe(20);
   });
 
   test('it gets average temperature from stack', () => {
@@ -44,6 +53,15 @@ describe('Push element to stack', () => {
     tempTracker.push(10);
     tempTracker.push(20);
     tempTracker.push(30);
+    tempTracker.push(40);
+    expect(tempTracker.getAvg()).toBe(25);
+    expect(
+      tempTracker.minMaxAvgStack[tempTracker.minMaxAvgStack.length - 1].avg
+    ).toBe(25);
+    tempTracker.pop();
     expect(tempTracker.getAvg()).toBe(20);
+    expect(
+      tempTracker.minMaxAvgStack[tempTracker.minMaxAvgStack.length - 1].avg
+    ).toBe(20);
   });
 });
