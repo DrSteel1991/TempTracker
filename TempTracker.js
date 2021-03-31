@@ -4,6 +4,7 @@ class TempTracker {
     this.stack = [];
   }
 
+  // O(1) time | O(1) space
   push(temp) {
     const newMinMaxAvg = { min: temp, max: temp, avg: temp, total: temp };
     if (this.minMaxAvgStack.length > 0) {
@@ -17,19 +18,23 @@ class TempTracker {
     this.stack.push(temp);
   }
 
+  // O(1) time | O(1) space
   pop() {
     this.minMaxAvgStack.pop();
     return this.stack.pop();
   }
 
+  // O(1) time | O(1) space
   getMin() {
     return this.minMaxAvgStack[this.minMaxAvgStack.length - 1].min;
   }
 
+  // O(1) time | O(1) space
   getMax() {
     return this.minMaxAvgStack[this.minMaxAvgStack.length - 1].max;
   }
 
+  // O(1) time | O(1) space
   getAvg() {
     return this.minMaxAvgStack[this.minMaxAvgStack.length - 1].avg;
   }
