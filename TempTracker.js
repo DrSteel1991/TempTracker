@@ -6,6 +6,7 @@ class TempTracker {
 
   // O(1) time | O(1) space
   push(temp) {
+    if (!Number.isInteger(temp)) return false;
     const newMinMaxAvg = { min: temp, max: temp, avg: temp, total: temp };
     if (this.minMaxAvgStack.length > 0) {
       const lastMinMaxAvg = this.minMaxAvgStack[this.minMaxAvgStack.length - 1];
