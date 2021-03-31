@@ -10,4 +10,4 @@ will install all dependencies.
 
 ### `npm run test`
 
-Will run the tests written, but please stop the server before running this command
+Will run the tests written.
